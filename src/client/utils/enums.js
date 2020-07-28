@@ -86,6 +86,6 @@ export const InputTypesEnum = {
 };
 
 export const CloudinaryFieldsEnum = {
-  Endpoint: 'https://api.cloudinary.com/v1_1/yossisaadi/image/upload',
-  UploadPreset: 'cldnry_facefeka'
+  Endpoint: 'https://api.cloudinary.com/v1_1/face-feka/image/upload',
+  UploadPreset: 'face-feka-preset'
 };

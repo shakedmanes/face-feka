@@ -47,7 +47,7 @@ class CreatePostOptions extends Component {
   };
 
   clickOnFileUpload() {
-    this.fileInput.current.click();
+    this.fileInput.current.click();    
   };
 
 }

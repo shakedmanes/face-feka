@@ -110,7 +110,7 @@ class MainSectionItemCreatePost extends Component {
     axiosFetch.post(PostPaths.Posts, newPost)
       .then((result) => {
         console.log(result);
-        this.zeroizePostState();
+        this.zeroizePostState();        
       }).catch((error) => {
         console.log(error);
       });
