@@ -2,6 +2,7 @@ const { Router } = require('express');
 const router = new Router;
 
 const User = require(`../models/user_model`);
+const GameModel = require('../models/game_model').GameModel;
 const authenticateUser = require('../middleware/authenticate_user');
 
 const {
@@ -11,7 +12,8 @@ const {
   Logout,
   VerifyToken,
   SelfInfo,
-  AddFriendship
+  AddFriendship,
+  UserWins
 } = require('../utils/enums').APIUserPathsEndpointsEnum;
 
 /** CREATE A NEW USER **/
@@ -92,6 +94,11 @@ router.get(`/${VerifyToken}`, authenticateUser, async (req, res) => {
 /** GET ALL USER's INFO OF THE SPECIFIC LOGGED IN AUTHENTICATED USER **/
 router.get(`/${Users}/${SelfInfo}`, authenticateUser, async (req, res) => {
   res.send(req.userFromAuth);
+});
+
+/** GET ALL USER's GAME WINS */
+router.get(`/${UserWins}`, authenticateUser, async (req, res) => {
+  res.send({ gameWins: await GameModel.getGameWins(req.userFromAuth) })
 });
 
 router.patch(`/${Users}/${AddFriendship}/:id`, authenticateUser, async (req,res) => {

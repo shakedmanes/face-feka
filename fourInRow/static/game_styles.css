@@ -1,0 +1,70 @@
+body{
+    background:#eee;
+  }
+  
+  h2{
+    text-align:center;
+    margin-bottom:2px;
+  }
+  
+  .info{    
+    width:100px;
+    height: 45px;
+    margin:0 auto;    
+    font-weight:bold;
+    color:#666;
+    margin-bottom:20px;
+  }
+  
+  #myTagName{
+    text-align: right;
+    float: left;
+    width: 50%;
+    margin: 5 auto;
+  }
+
+  #friendTagName{
+    text-align: left;
+    float: right;
+    width: 45%;    
+    margin: 5 auto;  
+  }
+
+  #gameStatus{
+    margin-top: 10px;
+    text-align: center;      
+  }
+
+  #game-base{
+    width:640px;  
+    margin:0 auto;
+    padding-top:60px;
+  }
+  
+  #game-table{
+    width:434px;
+    height:374px;
+    margin:0 auto;    
+    position:relative;
+    background-color: rgb(190, 190, 190);
+    z-index: -1;
+  }
+  
+  .disc{
+    position:absolute;
+    z-index:-1;
+    top:-55px;
+    left:14px;
+    width:46px;
+    height:46px;
+    border-radius:46px;
+    transition:all .3s;
+  }
+  
+  .disc.red{
+    background:#d96666;
+  }
+  
+  .disc.yellow{
+    background:#ffeb79;
+  }

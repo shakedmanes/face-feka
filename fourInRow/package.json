@@ -1,0 +1,22 @@
+{
+  "name": "fourinrow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "apache": "runApacheServer.bat",
+    "start": "concurrently npm:server npm:apache"
+  },
+  "author": "Liron Ezra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.27",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  }
+}

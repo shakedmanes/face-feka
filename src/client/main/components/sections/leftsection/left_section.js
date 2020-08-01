@@ -7,7 +7,8 @@ const LeftSection = ( { loggedInUser } ) => {
     <div className = "section left-section">
       <LeftSectionItemProfile
         loggedInUserName = { loggedInUser.name }
-        loggedInUserPic = { loggedInUser.profilepic } />
+        loggedInUserPic = { loggedInUser.profilepic }
+        loggedInUserGameWins = { loggedInUser.gameWins } />
     </div>
   );
 };

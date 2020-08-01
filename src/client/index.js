@@ -30,7 +30,12 @@ class App extends Component {
     axiosFetch.get(UserPaths.VerifyToken)
       .then(( result ) => {
         console.log(result);
-        this.setState( { loggedInUser: result.data } );
+        axiosFetch.get(UserPaths.UserWins).then((userWinsResult) => {
+          this.setState( { loggedInUser: { ...result.data, ...userWinsResult.data } } );
+        }).catch((error) => {
+          console.log(error);
+          window.location = '/sign.html';
+        });        
       }).catch((error) => {
         console.log(error);
         window.location = '/sign.html';

@@ -60,7 +60,7 @@ UserSchema.virtual(postCollectionNameDB, {
 
 UserSchema.methods.generateAuthToken = async function() {
   const _id = this._id.toString();
-  const token = jwt.sign({ _id }, Secret);
+  const token = jwt.sign({ _id, fullName: this.name.first + ' ' + this.name.last }, Secret);
 
   this.token = token;
   await this.save();

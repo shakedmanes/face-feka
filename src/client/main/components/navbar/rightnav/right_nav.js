@@ -5,7 +5,7 @@ import RightNavItem from './right_nav_item';
 
 import { RightNavBarPagesEnum } from '../../../../utils/enums';
 import { APIUserPathsEndpointsEnum as UserPaths } from '../../../../utils/server_endpoints';
-import { removeFromStorage } from '../../../../utils/storageMethods';
+import { removeFromStorage, getFromStorage } from '../../../../utils/storageMethods';
 import { TokenStorageKey } from '../../../../utils/constants';
 
 const RightNav = () => {
@@ -30,7 +30,7 @@ const RightNav = () => {
 
       <RightNavItem
         name = { RightNavBarPagesEnum.Profile.name }
-        href = { RightNavBarPagesEnum.Profile.href }
+        href = { `${RightNavBarPagesEnum.Profile.href}/${btoa(getFromStorage(TokenStorageKey).token)}`}
         blank = { true } >
         <RightNavBarPagesEnum.Profile.svg />
       </RightNavItem>
