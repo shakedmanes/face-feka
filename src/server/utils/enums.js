@@ -22,7 +22,8 @@ module.exports = {
     VerifyToken: 'verifytoken',
     SelfInfo: 'selfinfo',
     AddFriendship: 'addfriendship',
-    UserWins: 'userwins'
+    UserWins: 'userwins',
+    UserFriends: 'userfriends'
   },
 
   APIPostPathsEndpointsEnum: {

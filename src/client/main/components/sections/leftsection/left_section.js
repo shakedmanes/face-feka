@@ -8,7 +8,8 @@ const LeftSection = ( { loggedInUser } ) => {
       <LeftSectionItemProfile
         loggedInUserName = { loggedInUser.name }
         loggedInUserPic = { loggedInUser.profilepic }
-        loggedInUserGameWins = { loggedInUser.gameWins } />
+        loggedInUserGameWins = { loggedInUser.gameWins }
+        loggedInUserFriends = { loggedInUser.friends } />
     </div>
   );
 };

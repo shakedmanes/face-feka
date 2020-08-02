@@ -82,6 +82,11 @@ UserSchema.statics.findByCredentials = async (email, password) => {
   return user;
 };
 
+UserSchema.statics.getUserFriends = async (userObject) => {
+  const friends = (await UserModel.findOne({ _id: userObject._id }).populate('friends')).friends;
+  return friends;
+};
+
 UserSchema.pre('save', async function (next) {
   if (this.isModified('password')) {
     this.password = await bcrypt.hash(this.password, saltRounds);

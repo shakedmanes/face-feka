@@ -4,6 +4,7 @@ const router = new Router;
 const User = require(`../models/user_model`);
 const GameModel = require('../models/game_model').GameModel;
 const authenticateUser = require('../middleware/authenticate_user');
+const UserModel = require('../models/user_model');
 
 const {
   Users,
@@ -13,7 +14,8 @@ const {
   VerifyToken,
   SelfInfo,
   AddFriendship,
-  UserWins
+  UserWins,
+  UserFriends
 } = require('../utils/enums').APIUserPathsEndpointsEnum;
 
 /** CREATE A NEW USER **/
@@ -99,6 +101,11 @@ router.get(`/${Users}/${SelfInfo}`, authenticateUser, async (req, res) => {
 /** GET ALL USER's GAME WINS */
 router.get(`/${UserWins}`, authenticateUser, async (req, res) => {
   res.send({ gameWins: await GameModel.getGameWins(req.userFromAuth) })
+});
+
+/** GET ALL USER's FRIENDS */
+router.get(`/${UserFriends}`, authenticateUser, async (req, res) => {
+  res.send({ friends: await UserModel.getUserFriends(req.userFromAuth) });
 });
 
 router.patch(`/${Users}/${AddFriendship}/:id`, authenticateUser, async (req,res) => {

@@ -31,7 +31,12 @@ class App extends Component {
       .then(( result ) => {
         console.log(result);
         axiosFetch.get(UserPaths.UserWins).then((userWinsResult) => {
-          this.setState( { loggedInUser: { ...result.data, ...userWinsResult.data } } );
+          axiosFetch.get(UserPaths.UserFriends).then((userFriends) => {
+            this.setState( { loggedInUser: { ...result.data, ...userWinsResult.data, ...userFriends.data} } );
+          }).catch((error) => {
+            console.log(error);
+            window.location = '/sign.html';
+          });          
         }).catch((error) => {
           console.log(error);
           window.location = '/sign.html';

@@ -35,11 +35,11 @@ const RightNav = () => {
         <RightNavBarPagesEnum.Profile.svg />
       </RightNavItem>
 
-      <RightNavItem
+      {/* <RightNavItem
         name = { RightNavBarPagesEnum.Friends.name }
         href = { RightNavBarPagesEnum.Friends.href } >
         <RightNavBarPagesEnum.Friends.svg />
-      </RightNavItem>
+      </RightNavItem> */}
 
       <RightNavItem
         name = { RightNavBarPagesEnum.Logout.name }
